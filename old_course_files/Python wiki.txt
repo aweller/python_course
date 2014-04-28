@@ -1,0 +1,217 @@
+﻿Variables 
+Variables are a concept you already know from math. They are names assigned to an objects with “=”. Don’t confuse variables (no quotes) with strings (in quotes), and remember the difference between “=” (assignment) and “==” (comparison)!
+PYON
+myname = “Andreas”
+print myname
+PYOFF
+Output
+        “Andreas”
+You implicitly tell Python “From now on, whenever I use the variable myname, just replace it with “Andreas” ”
+
+
+
+
+Functions and Methods
+You can think of functions and methods as the verbs in the Python language. They are always followed by normal brackets (). If the action is performed on an object, that object stands inside the brackets. 
+Functions are used by themselves, while methods are tied to a particular type of object and always used together with it using object.method() syntax. 
+
+
+PYON
+name = “Andreas”
+type(name) == string # using the type function on the variable “name”
+len(name) == 7 # using the length function
+name.upper() == “ANDREAS” # using the “upper” method which only works on strings
+PYOFF
+
+
+Indexing and Slicing
+
+
+Indexing and slicing are ways to retrieve items from an iterable. An iterable is any object that can be divided into smaller parts. E.g. a string is an iterable because it consists of individual letters, while an iteger or a Boolean are not.
+
+
+Single items are retrieved using square brackets and their index number, which is starting from 0, not 1.
+Multiple items are retrieved using square brackets and the index number of the first item and the index number of the first item AFTER the slice. It is possible to give an index counting from the end of the iterable by using negative indexes.
+
+
+PYON
+name = "Andreas"
+name[0] == "A"
+name[1] == "n"
+name[-1] == "s" # last item
+name[-2] == "a" # item before last item
+name[1:3] == "nd" # from 2nd item to BEFORE 4th item
+PYOFF
+
+
+Scripting
+
+
+A Python script is simply Python code in a text file ending with ".py". To execute the script, type "python scriptname.py" in the commandline (or "python /path/to/file/scriptname.py" if you are in a different folder). All code in the script will be executed, except for lines marked with "#".
+It is important to get used early to giving meaningful names to scripts and variables and commenting the code, otherwise you will get lost in you own scripts very quickly.
+
+
+NOT like this:
+    PYON
+    file: another_script.py
+    
+    v = "Hello"
+    print v
+    PYOFF
+    
+but like this:
+    PYON
+    file: message_printer.py
+    
+    # this script print a message to the screen
+    message = "Hello"
+    print message
+    PYOFF
+
+
+Data structures 
+    
+We will be learning about 2 types of data structures in this course. There are many more, but these 2 are what you will use most of the time. Understanding how to use them properly is one of the most important things for you today, because they are necessary in almost every program.
+
+
+Lists
+A list is an array of objects of any type (even another list!). The items have an fixed order, which is important for using indexing and slicing on them. Lists use square brackets: [item1, item2].
+
+
+PYON
+fruits = ["apple", "orange"]
+type(fruits) == list
+fruits[1] == "orange" # index like a string
+"apple" in fruits == True # test item membership
+
+
+len(list) == 2 # get the number of items
+fruits.count("apple") == 1
+fruits.append("pineapple") # append a new object to the list
+PYOFF
+
+
+Dictionaries
+A dictionary consists of key:value pairs. Think of it like a telephone book, with the keys being the names and the values the phone numbers. Keys need to be of a certain type (numbers, strings or variables), while a value can be anything, even another dictionary. Keys need to be unique to the dictionary (how else would Python know which one you mean?), while the same value can be in the dictionary as often as you like. Dictionarys use curly brackets {key1:value1, key2:value2}.
+Unlike lists, dictionarys do not have an order, which means they cannot be indexed and sliced.
+
+
+PYON
+grades = {"Tom":"A", "John":"C", "Martin":"F-"}
+grades["Tom"] == "A" # query the dictionary
+grades["Ines"] = "B" # insert a new key:value pair
+"John" in grades == True # test membership
+
+
+grades.keys() # retrieve the keys as a new list
+["John", "Martin", "Tom", "Ines"] # this list does not keep the order of the dict!
+PYOFF
+
+
+Flow control
+The concept of flow control can be a bit tricky to understand at first, until you realize they are something we also use in our daily language, just a bit more formalized. Very strictly speaking, you could write a script without using flow control, but you would have to do an awful lot of repetitive und unnecessary typing.
+
+
+For loops
+These tell Python to repeat one or more lines of code FOR each item in an iterable. It's the same concept as telling someone "Wash each fruit in the basket!" instead of saying "Wash the apple, wash the orange, wash the pineapple!".
+The code that should be repeated for each item is indented with a tab. This is a unique feature of Python, which improves code readability a lot.
+You need to strictly follow the syntax of for loops:
+
+
+PYON
+basket = ["apple", "orange", "pineapple"]
+for single_fruit in basket: # all_fruits is a list of fruits
+    output = "I wash the " + single_fruit # we create an output string using the variable single_fruit
+    print output
+print "Now i'm done."
+PYOFF
+Output:
+    "I wash the apple"
+    "I wash the orange"
+    "I wash the pineapple"
+    "Now i'm done."
+
+
+Notice the semicolon at the end of the 1st row and the indentation of the 2nd and 3rd row which is removed in the 4th after the loop is finished. The variable single_fruit is defined on-the-fly, i.e. we just use the name in the 1st row and Python implicitly assumes that this is the variable name we want to use for the items in this loop.  
+
+
+While loops
+They work almost like for-loops, but instead of doing somethin FOR each item in an iterable, they do something WHILE a condition is met (or not met, depending on you). While loops are often used with a counter variable that is increased with each iteration.
+
+
+PYON
+counter = 0 # an integer counter
+while counter < 4:
+    counter += 1 # increase the counter value by 1
+    print "I buy another apple. Now i have " + str(counter) # the integer needs to be converted to a string to print!
+print "Thats enough!"
+PYOFF
+Output:
+    "I buy another apple. Now i have 1"
+    "I buy another apple. Now i have 2"
+    "I buy another apple. Now i have 3"
+    "Thats enough!"
+
+
+File Input and Output
+Reading and writing files is very simple in Python. A concept you need to understand: you DO NOT access the file at the position you like, e.g. like an Excel table where you can just go to "E4". Instead you iterate over the rows of the file ONCE and do whatever needs to be done, then close the file. If you need more data from the file later, you open it and run through it again. This is where lists and dictionaries are very useful: just insert the data you need once and use it later!
+Files are opened using a "with" statement that shares similarities with for/while loops. The file will be closed as soon as you exit the indented block following the "with" statement.
+
+
+PYON
+filename = "mydata.txt"
+with open(filename, "r") as myfile: # "myfile" is another on-the-fly variable name
+    for row in myfile: # notice the indentation!
+        print row # we can now iterate over the rows just like over a list of strings
+PYOFF
+The "r" behind the filename stands for "read"-mode. The simplest way to write to a file is to use "print" statements and redirect the output in the commandline (e.g. "python HelloWorld.py > datafile.txt")
+It is also possible to write to a file directly using "w" and the file method .write()
+
+
+PYON
+filename = "output.txt"
+with open(filename, "w") as myfile:
+    myfile.write("This is some output")
+
+
+
+
+Modules
+If you write big scripts that use a lot of code or if you want to use code that someone else has written, it would be a bad idea to just copy it into your script. Instead, you import it as a module, i.e. you tell Python that you would like to use some code (like a function) that is saved in another file on your computer.
+In this course, we will only cover the use of built-in modules that come automtically with your Python installation.
+External modules are imported at the beginning of you script using the "import" statement. When you want to use a function of that module, you need to tell Python by writing module.function(). 
+
+
+PYON
+import scipy # scientific python which has a lot of useful math functions
+
+
+data = [2,4]
+scipy.mean(data) == 3 # use the mean() function from the scipy module
+PYOFF
+
+
+Common mistakes:
+- Writing too much code before testing it. A bug that has a lot of space to hide in is harder to catch!
+- Confusing yourself by using meaningless variable names.
+- Using row.split() on tab-separated files (or row.split(“/t”) on space-separated files).
+- Confusing the types of your object, especially integers vs floats and strings vs variables
+- Confusing (), [] and {}
+- Forgetting that dictionaries are unordered and need unique keys. 
+- Forgetting that indexing starts from zero, not one.
+- Forgetting the semicolon and indentation in for/while/with statements.
+- Making a typo in a variable and thereby declaring a new variable instead of using the existing one.
+- Initialising a counter inside of a loop (which means it will be set to zero at each iteration).  
+- Using a condition in a while-loop that can never be true.
+
+
+
+
+Homework tips
+- Think before you code! Are there different ways to reach your goal?
+- Write one or two rows of code. Test the content of variables with a “print” statement. Only proceed if you get what you expected.
+- If possible, cross-check your results with commandline magic (e.g. grep | wc -l )
+- Comment your code. 
+- If theres an error message, don’t worry. Read it carefully. In which row of the script did the error happen? What kind of error was it? If necessary, google the error message. 
+- Many homework tasks involve selecting rows from a file. Think carefully what separates the rows you want from the ones you don’t. Decide if you can operate on whole rows or if you need to split them into columns first.
+- Dictionaries are an elegant way to save information from one file to use it later.

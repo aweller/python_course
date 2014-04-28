@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{2}{0}{1}
+\beamer@sectionintoc {2}{Data types}{7}{0}{2}
+\beamer@sectionintoc {3}{Functions and Methods}{15}{0}{3}
+\beamer@sectionintoc {4}{Data structures}{18}{0}{4}
+\beamer@sectionintoc {5}{Flow control}{23}{0}{5}
+\beamer@sectionintoc {6}{Working with files}{28}{0}{6}

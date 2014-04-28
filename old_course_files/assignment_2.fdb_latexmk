@@ -1,0 +1,15 @@
+# Fdb version 3
+["pdflatex"] 1398180159 "assignment_2.tex" "assignment_2.pdf" "assignment_2" 1398180226
+  "/etc/texmf/web2c/texmf.cnf" 1396365773 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1254151887 20571 b8bd218bf2e18b4f5817ee643cd9c515 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1254151887 9042 248dfba326a1b8733d6bb8e0a3ac1e49 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1160175134 20521 e5d13d98d57bd53d4fed3aa61bd29c86 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1374751034 31103 dbc49c70ca9e47fd7f4e40a14691afe7 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1374751034 31103 dbc49c70ca9e47fd7f4e40a14691afe7 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1396735647 2043086 add6c3dbbacfd7ce5c75047b0aa25b54 ""
+  "assignment_2.aux" 1397459960 747 99ea4f60ef273493a873165f14dea6fe ""
+  "assignment_2.tex" 1398180226 11642 50984ec72042abedb776fd66dd973deb ""
+  "lastpage.sty" 1398180221 2007 0c9ca4cd42c781fc5d766abc92b965ef ""
+  (generated)
+  "assignment_2.pdf"
+  "assignment_2.log"

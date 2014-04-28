@@ -1,0 +1,72 @@
+Numbers
+- Open the python shell by typing ((python))
+- Try using the shell as a calculator
+- Try 10/3
+- Try 10/3.0 
+- Whats the type of ((10))? Of ((10.0))?
+
+Comparisons
+- Try the >, =, < operators
+- Can you compare a string to a float?
+- Type ((a = 3)). Now type ((a)). What's the type of ((a))?
+- Type ((b = 3 > 2)). Now type ((b)). What's the type of ((b))?
+- What's the difference between ((a = 3)) and ((a == 3))?
+- Try ((c == 10)). What happens? Why?
+- Type ((c = 5)), then again ((c == 10)). What happens now?
+
+Strings
+- Whats the difference between (("a")) and ((a))?
+- Try ((a = "Python")), then ((b = "Course")), then ((c = a + b))
+- Whats the result of (("on" in c))? (("Course1" in c))?
+- Try the methods .lower and .upper
+
+Slicing
+- Try slicing on the previous variable c. Whats c[-1]? How do you get "Py"? "course"? "Ptocus"?
+- BONUS: ((d = "python")). How do you change d to "Python" in one command using slicing and string methods?
+
+Easy scripting
+- Open your text editor of choice.
+- Write ((print "Hello World!"))
+- Save as hello_world.py
+- In the terminal: Make sure you are in the same folder as the file.
+- Type ((python hello_world.py)). Congratulations!
+
+Lists
+Remember the difference between a variable and a string!
+- Create a list of fruits in the python shell e.g ((fruits = ["apple", "apple", "orange", "banana"]))
+- Try the slicing operations you learned for strings. 
+- Try the "x in y" comparison to test if a fruit is in your list or not.
+- How do you include "pineapple" in your list?
+- Try to join your list into a long string using e.g. (( "-".join(fruits) ))
+- Count the amount of apples in your list
+- BONUS: Create a second list of veggies. How do you combine the lists into one?
+
+Dictionaries
+Remember the different types of brackets!
+- Create a dict of students and their grades (( {"Tom":"A", "John":"C", "Martin":"F-"} ))
+- Which are the keys and which are the values? What's the difference?
+- Retrieve the grade for Martin using dict[key].  
+- Add new student "Andreas" who has the grade "A". Print the dict.
+- Add another student called "John" who has the grade "A". Print the dict. What happened? 
+- BONUS: Find out how many students have the grade "A".
+
+For loops
+Remember the indentation!
+- Go back to you Hello_World.py script. Save a copy as hello_world_for_loop.py.
+- Create a list of people. Print each name using a for-loop.
+- BONUS: Have the script individually say hello e.g. "Hello Tom!", "Hello John!" etc. using string substitution. 
+
+While loops
+Remember: an numerical variable can be increased by e.g. ((a += 1))!
+- Go back to your Hello_World.py script. Save a copy as hello_world_while_loop.py
+- Introduce a counter variable that starts at 0, e.g ((counter = 0)).
+- Create a while loop that prints "Hello World!" until the counter has reached 10. 
+
+File input and output
+- Write a simple replacement for "grep". Hints: open a file, iterate over the rows, check for you search term, print row if found.
+- BONUS: Have the script print the row number of each output row together with the row.
+ 
+Modules
+- Extend your grep script to accept the search term as a commandline argument.
+- BONUS: Have the script find out if the user gave an argument and use a default search term if he didn't.
+

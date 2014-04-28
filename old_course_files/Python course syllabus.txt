@@ -1,0 +1,46 @@
+﻿Introduction to Python programming
+
+
+Course supervisor:
+Andreas Weller
+Fabio Zanini
+
+
+Department of Evolutionary Biology
+Max Planck Institute for Developmental Biology
+Spemannstr. 35, 72076 Tübingen
+
+
+Length of course:
+1 week in May 2013
+
+
+Number of students:
+10-15
+
+
+Requirement:
+None, this course is intended for absolute beginners who have only used the Windows operating system before. 
+
+
+Goal of the course:
+The goal of the course is the bring the students to a level of programming expertise which will allow them to continue on their own. It is mandatory that they are actually able to use simple programming in their daily work, otherwise they will not practice their new skills and will quickly forget them. 
+In practice, this means students should be capable of using a UNIX command-line to modify files, execute scripts and perform basic data analysis. They should be able to parse a data file into Python, manipulate the contents, perform data analysis and statistics, visualize data as plots and save their results into output files. 
+
+
+Course description:
+The course was focused on practical exercises rather than long lectures. 
+The course was divided into lessons of around 30mins. Each lesson consisted of a short lecture on the blackboard by the supervisor (2-10mins), a practical demonstration using the supervisors laptop and a large external monitor (2-10mins) followed by practical exercises done by each student on their own computers (10-20mins). 
+The first day focus entirely on the UNIX command-line. In the second day, we introduced all necessary components of a simple Python script. In the third day, we put this knowledge into practice and worked with a real biological data file. The fourth day was spent on numerical computing and matrices using Numpy. On the final day we created graphs using the Matplotlib package. 
+
+
+Registration deadline:
+11th of April 2013
+
+
+Grading:
+There was no grading in the course this year. Grading is possible in future editions and will consist of the homework and a practical programming exercise of ~2 hours at the end of the course.
+
+
+Course policies:
+As there was no grading, the attendance to individual course days was not mandatory. It was however expected from the students to free their slot to someone from the waiting list in case they couldn’t attend.

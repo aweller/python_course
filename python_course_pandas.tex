@@ -1,0 +1,561 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+% All the following changes from: http://kbroman.wordpress.com/2013/10/07/better-looking-latexbeamer-slides/
+
+% \documentclass[12pt,t]{beamer}
+\documentclass[]{beamer}
+\usefonttheme{structurebold}
+\usefonttheme{serif}
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+% \definecolor{foreground}{RGB}{255,255,255}
+% \definecolor{background}{RGB}{24,24,24}
+% \definecolor{title}{RGB}{107,174,214}
+% \definecolor{gray}{RGB}{155,155,155}
+% \definecolor{subtitle}{RGB}{102,255,204}
+% \definecolor{hilight}{RGB}{102,255,204}
+% \definecolor{vhilight}{RGB}{255,111,207}
+% 
+% \setbeamercolor{titlelike}{fg=title}
+% \setbeamercolor{subtitle}{fg=subtitle}
+% \setbeamercolor{institute}{fg=gray}
+% \setbeamercolor{normal text}{fg=foreground,bg=background}
+
+% \setbeamercolor{item}{fg=foreground} % color of bullets
+% \setbeamercolor{subitem}{fg=gray}
+% \setbeamercolor{itemize/enumerate subbody}{fg=gray}
+% \setbeamertemplate{itemize subitem}{{\textendash}}
+% \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+% \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% setbeamertemplate{footline}{%
+%     \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+%           \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{Stockton}
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+% \usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+% \usecolortheme{beetle}
+% \usecolortheme{crane}
+% \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+% \usecolortheme{seagull}
+\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz} % Allows flow diagram drawing
+% \usepackage{minted} % for code
+\usepackage{listings} % for code
+
+\usetikzlibrary{arrows,shapes}
+
+\setbeamertemplate{footline}[page number]{} %gets rid of bottom navigation bars
+\beamertemplatenavigationsymbolsempty %remove control buttons
+
+\defbeamertemplate*{custom section page}{default}[1][]
+{
+  \centering
+  \vfill
+    \begin{beamercolorbox}[sep=8pt,center,#1]{section title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+}
+\newcommand*{\customsectionpage}{\usebeamertemplate*{custom section page}}
+
+\AtBeginSection{\frame{\customsectionpage}} % create section title pages
+
+\newcommand\Fontsmall{\fontsize{6}{7.2}\selectfont}
+\newcommand\Fontmedium{\fontsize{8}{20.4}\selectfont}
+\newcommand\Fontlarge{\fontsize{12}{30.4}\selectfont}
+\newcommand\Fontxlarge{\fontsize{18}{21.6}\selectfont}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[]{Python for Data Analysis} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Andreas Weller, PhD} % Your name
+\institute[WTCHG] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{WTCHG - NHS % Your institution for the title page
+% \medskip
+% \textit{john@smith.com} % Your email address
+}
+\date{23.4.2014} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Overview} % Table of contents slide, comment this block out to remove it
+% \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+% \end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+% ------------------------------------------------
+\section{Intro} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Overview}
+
+\begin{block}{Data types}
+\begin{itemize}
+\item Basic materials (Wood / Stone)  
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Methods}
+\begin{itemize}
+\item Associated activities (Wood sawing / Stone chipping)
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Data structures}
+\begin{itemize}
+\item Building structures (Wooden wall / Stone wall)  
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Flow control}
+\begin{itemize}
+\item Command builders ('Build me a 10 foot stone wall!')
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+% ------------------------------------------------
+\section{Data types}
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Data types: numbers}
+
+
+\begin{itemize}
+\item int (Integers): whole numbers 
+\item float: floating-point numbers
+\end{itemize}
+
+\vspace{1cm}
+\pause
+
+\begin{block}{Variables}
+\begin{itemize}
+\item a = 4
+\item b = 2
+\item a + b
+\\6
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Data types: Boolean}
+
+\begin{itemize}
+\item Switch with 2 states: True or False
+\item Answers to a yes/no question
+\end{itemize}
+\vspace{1cm}
+\pause
+
+\begin{block}{Comparisons}
+\begin{itemize}
+\item 3 == 4
+\\False 
+\item 2 < 4
+\\True
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Data types: Strings}
+
+\begin{itemize}
+\item Strings of letters without inherent meaning
+\item Always in quotation marks
+\end{itemize}
+
+\pause
+
+\begin{block}{String manipulation}
+\begin{itemize}
+\item name = "Andreas"
+\item last = "Weller"
+\item name + last
+\\ "AndreasWeller"
+\item "ll" in last \\
+True
+\item "First name: \%s, last name: \%s." \% (name, last) \\
+First name: Andreas, last name: Weller.
+\end{itemize}
+\end{block}
+
+\end{frame}
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Slicing}
+
+\begin{itemize}
+\item Ways to retrieve data from an iterable
+\item Scheme: iterable [ first item : item AFTER last item : step] 
+\end{itemize}
+ 
+\begin{table}[h]
+\begin{tabular}{lllllll}
+a & n & d & r & e & a & s \\
+0 & 1 & 2 & 3 & 4 & 5 & 6
+\end{tabular}
+\end{table} 
+ 
+\begin{block}{Slicing}
+\begin{itemize}
+\item name = "Andreas"
+\item name[3:5]
+\\ "re"
+\item name[3:]
+\\ "reas"
+\item name[::2]
+\\ "Ades"
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+\section{Functions and Methods}
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Methods}
+
+\begin{itemize}
+\item Methods are the verbs of Python
+\item Scheme: object.method(argument)
+ 
+\end{itemize}
+
+\Fontlarge
+
+\begin{table}[h]
+\begin{tabular}{lll}
+\textbf{English} & \textbf{Python}  & \textbf{Abstract} \\ \hline
+"The dog sleeps"       & dog.sleep()      & obj.method()      \\ \hline
+"The dog jumps high"   & dog.jump("high") & obj.method(arg)   \\ \hline
+"The dog eats a cat"   & dog.eat(cat)     & obj.method(obj)  
+\end{tabular}
+\end{table}
+
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Methods II}
+
+\begin{itemize}
+\item Methods are specific to each data type.
+\end{itemize}
+\vspace{1cm}
+
+\begin{block}{String methods}
+\begin{itemize}
+\item name = "Andreas"
+\item name.upper()
+\\ "ANDREAS"
+\item name.lower()
+\\ "andreas"
+\item name.strip("as")
+\\ "Andre"
+\item name.replace("dre", "XXX")
+\\ "AnXXXas"
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+% ------------------------------------------------
+\section{Data structures}
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Lists}
+
+\begin{itemize}
+\item Lists are \textbf{ordered} arrays of objects.
+\item The items in a list can be of any type.
+\item Lists are defined in \textbf{square brackets}.
+\end{itemize}
+% \vspace{1cm}
+
+\pause
+
+\begin{block}{List methods}
+\begin{itemize}
+\item students = ["Pauline","Carme","Anthony"]
+\item "Andreas" in students
+\\ False
+\item students[1]
+\\"Carme"
+\item students.append("Pauline")
+\item students 
+\newline
+["Pauline","Carme","Anthony","Pauline"]
+\item students.count("Pauline")
+\\ 2
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Dictionaries}
+
+\begin{itemize}
+\item Dictionaries are a collection of \textbf{unordered} \{key:value\} pairs 
+\item Keys need to be of type str, values can be anything
+\item Dictionaries defined in \textbf{curly brackets}, but selected in \textbf{square brackets}
+\end{itemize}
+% \vspace{1cm}
+
+\pause
+
+\begin{block}{Dictionary methods}
+\begin{itemize}
+\item grades = \{"Pauline":2, "Carme":4, "Anthony":1\}
+\item grades["Carme"]
+\\ 4
+\item grades["Reem"] = 1
+\item grades
+\newline
+\{"Pauline":2, "Reem":1, "Carme":4, "Anthony":1\}
+\item grades.keys()
+\newline
+["Pauline","Reem","Carme","Anthony"]
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+\section{Flow control}
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Simple scripting}
+
+\begin{itemize}
+\item A script is simply a text file ending in ".py"
+\item Scripts are executed on the commandline
+\item 'python script.py'
+\end{itemize}
+
+\begin{block}{}
+\lstinputlisting[language=Python]{hello_world.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{If statements}
+
+\begin{itemize}
+\item Run some code \textbf{IF} a condition is True
+\item Code to be run is indented with tabs
+\end{itemize}
+
+\begin{block}{}
+\lstinputlisting[language=Python]{if_clause.py}
+\end{block}
+
+% ------------------------------------------------
+
+\end{frame}
+
+\begin{frame}
+\frametitle{For loops}
+
+\begin{itemize}
+\item Run some code \textbf{FOR} each item in an iterable
+\item Looping code is indented with tabs
+\end{itemize}
+
+\pause
+
+\begin{block}{}
+\lstinputlisting[language=Python]{for_loop.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+\section{Working with files}
+% ------------------------------------------------
+
+
+\begin{frame}
+\frametitle{File manipulation I}
+
+\begin{block}{}
+\lstinputlisting[language=Python]{file_handling.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{File manipulation II}
+
+
+\begin{block}{}
+\lstinputlisting[language=Python]{file_handling_2.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{File manipulation III}
+
+\begin{itemize}
+\item The \textbf{WITH} statement is the best way to open files
+\item Python walks through the rows one by one, \\ without loading the whole file into memory
+\end{itemize}
+
+\pause
+
+\begin{block}{}
+\lstinputlisting[language=Python]{file_handling_3.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{Modules}
+
+\begin{itemize}
+\item Many useful modules are not loaded by default.
+\item We can use any Python code in our script by \textbf{importing} it.
+\item The module exists as an object with methods to call
+\end{itemize}
+
+\pause
+
+\begin{block}{}
+\lstinputlisting[language=Python]{import.py}
+\end{block}
+
+\end{frame}
+
+% ------------------------------------------------
+
+\end{document} 

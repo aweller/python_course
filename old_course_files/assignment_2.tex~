@@ -1,0 +1,311 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programming/Coding Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+% This template uses a Python script as an example snippet of code, most other
+% languages are also usable. Configure them in the "CODE INCLUSION 
+% CONFIGURATION" section.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\rhead{\hmwkClass\  % Top center head
+% \chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center head
+
+% \rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	CODE INCLUSION CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0} % This is the color used for comments
+\lstloadlanguages{Python} % Load Python syntax for listings, for a list of other languages supported see: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\lstset{language=Python, % Use Python in this example
+        frame=single, % Single frame around code
+        basicstyle=\small\ttfamily, % Use small true type font
+        keywordstyle=[1]\color{Blue}\bf, % Python functions bold and blue
+        keywordstyle=[2]\color{Purple}, % Python function arguments purple
+        keywordstyle=[3]\color{Blue}\underbar, % Custom functions underlined and blue
+        identifierstyle=, % Nothing special about identifiers                                         
+        commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small, % Comments small dark green courier font
+        stringstyle=\color{Purple}, % Strings are purple
+        showstringspaces=false, % Don't put marks in string spaces
+        tabsize=5, % 5 spaces per tab
+        %
+        % Put standard Python functions not included in the default language here
+        morekeywords={rand},
+        %
+        % Put Python function parameters here
+        morekeywords=[2]{on, off, interp},
+        %
+        % Put user defined functions here
+        morekeywords=[3]{test},
+       	%
+        morecomment=[l][\color{Blue}]{...}, % Line continuation (...) like blue comment
+        numbers=left, % Line numbers on left
+        firstnumber=1, % Line numbers start with line 1
+        numberstyle=\tiny\color{Blue}, % Line numbers are blue and small
+        stepnumber=5 % Line numbers go in steps of 5
+}
+
+% Creates a new command to include a perl script, the first parameter is the filename of the script (without .pl), the second parameter is the caption
+\newcommand{\pythonscript}[2]{
+\begin{itemize}
+\item[]\lstinputlisting[caption=#2,label=#1]{#1.py}
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterTaskHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitTaskHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkTaskCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkTaskName}{}
+\newenvironment{homeworkTask}[1][Bash Task \arabic{homeworkTaskCounter}]{ % Makes a new environment called homeworkTask which takes 1 argument (custom name) but the default is "Task #"
+\stepcounter{homeworkTaskCounter} % Increase counter for number of problems
+\renewcommand{\homeworkTaskName}{#1} % Assign \homeworkTaskName the name of the problem
+\section{\homeworkTaskName} % Make a section in the document with the custom problem count
+\enterTaskHeader{\homeworkTaskName} % Header and footer within the environment
+}{
+\exitTaskHeader{\homeworkTaskName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterTaskHeader{\homeworkTaskName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterTaskHeader{\homeworkTaskName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+% \newcommand{\hmwkTitle}{Assignment\ \#1} % Assignment title
+% \newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+\newcommand{\hmwkClass}{Python course} % Course/class
+% \newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+% \newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Python course 2013} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% \title{
+% \vspace{2in}
+% \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+% \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+% \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+% \vspace{3in}
+% }
+% 
+% \author{\textbf{\hmwkAuthorName}}
+% \date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% \maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+% \newpage
+% \tableofcontents
+% \newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item Explore your file system!
+  \item Whats in your home folder?
+  \item How many users are there on your system?
+  \item Try an absolute path to get to home!
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item Create a new folder at home
+  \item Create an empty file in it
+  \item List the file
+  \item Rename the file
+  \item Move the file one level up
+  \item Remove the file. Test if it's really gone.
+  \item Remove the folder. Test if it's really gone.
+  \item Go to root
+  \item Try to create a directory in root
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item Create a directory called python\_course.
+  \item Move the course files from your Downloads folder to the course folder
+  \item Unpack them with 'tar xzvf [files]'
+  \item What files are in there?
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item How big are your course files?
+  \item And how long?
+  \item Create a new file
+  \item How big and long is it?
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item Open a new file in nano
+  \item Write something into it
+  \item Save it as test1.txt
+  \item Do it again for a 2nd file called test2.txt
+  \item Cat both into a new file called test3.txt
+  \item Open it with less
+  \item Remove all 3 files in a single command (use a wildcard!).
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+In the following tasks we will try to analyse the file 'pristionchus\_mutations.txt' in your course files.
+It's a list of mutations and their effects in several Pristionchus strains (surprise!).
+
+Each line corresponds to one mutation. 
+The columns stand for:
+
+Strain-Chromosome-Contig-Position-ReferenceBase-MutatedBase-CodingState-Effect-Homologs 
+
+\begin{enumerate}
+  \item Understand the contents
+  \item Try head and tail
+  \item Create a new file containing only the Contig information.
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item Are there SNPs in an 'unc'-gene?
+  \item How many SNPs does the file contain in total?
+  \item How many SNPs are in exons?
+  \item How many SNPs are in exons on Contig0?
+\end{enumerate}
+\end{homeworkTask}
+
+\begin{homeworkTask}
+\begin{enumerate}
+  \item How many "C" are mutated? 
+  \item How many mutations from "A" to "G"?
+  \item How many in MA\_46?
+  \item Which strain has the most SNPs?
+\end{enumerate}
+\end{homeworkTask}
+
+
+
+
+
+\begin{homeworkTask}
+Listing \ref{example1} shows a Python script.
+
+\pythonscript{example1}{Sample Python Script With Highlighting}
+
+\lipsum[1]
+\end{homeworkTask}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkTask}
+\lipsum[2]
+
+\problemAnswer{
+\begin{center}
+\includegraphics[width=0.75\columnwidth]{example_figure} % Example image
+\end{center}
+
+\lipsum[3-5]
+}
+\end{homeworkTask}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

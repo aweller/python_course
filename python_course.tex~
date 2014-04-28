@@ -1,0 +1,619 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+% All the following changes from: http://kbroman.wordpress.com/2013/10/07/better-looking-latexbeamer-slides/
+
+% \documentclass[12pt,t]{beamer}
+\documentclass[]{beamer}
+\usefonttheme{structurebold}
+\usefonttheme{serif}
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+% \definecolor{foreground}{RGB}{255,255,255}
+% \definecolor{background}{RGB}{24,24,24}
+% \definecolor{title}{RGB}{107,174,214}
+% \definecolor{gray}{RGB}{155,155,155}
+% \definecolor{subtitle}{RGB}{102,255,204}
+% \definecolor{hilight}{RGB}{102,255,204}
+% \definecolor{vhilight}{RGB}{255,111,207}
+% 
+% \setbeamercolor{titlelike}{fg=title}
+% \setbeamercolor{subtitle}{fg=subtitle}
+% \setbeamercolor{institute}{fg=gray}
+% \setbeamercolor{normal text}{fg=foreground,bg=background}
+
+% \setbeamercolor{item}{fg=foreground} % color of bullets
+% \setbeamercolor{subitem}{fg=gray}
+% \setbeamercolor{itemize/enumerate subbody}{fg=gray}
+% \setbeamertemplate{itemize subitem}{{\textendash}}
+% \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+% \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% setbeamertemplate{footline}{%
+%     \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+%           \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{Stockton}
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+% \usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+% \usecolortheme{beetle}
+% \usecolortheme{crane}
+% \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+% \usecolortheme{seagull}
+\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz} % Allows flow diagram drawing
+\usetikzlibrary{arrows,shapes}
+
+\setbeamertemplate{footline}[page number]{} %gets rid of bottom navigation bars
+\beamertemplatenavigationsymbolsempty %remove control buttons
+
+\defbeamertemplate*{custom section page}{default}[1][]
+{
+  \centering
+  \vfill
+    \begin{beamercolorbox}[sep=8pt,center,#1]{section title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+}
+\newcommand*{\customsectionpage}{\usebeamertemplate*{custom section page}}
+
+\AtBeginSection{\frame{\customsectionpage}} % create section title pages
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[]{Python for Data Analysis} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Andreas Weller, PhD} % Your name
+\institute[WTCHG] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{WTCHG - NHS % Your institution for the title page
+% \medskip
+% \textit{john@smith.com} % Your email address
+}
+\date{23.4.2014} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Overview} % Table of contents slide, comment this block out to remove it
+% \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+% \end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+% ------------------------------------------------
+\section{UNIX commandline} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+% ------------------------------------------------
+
+% \subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+% ------------------------------------------------
+
+\begin{frame}
+\frametitle{/home/andreas/work/}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{bigblock} = [rectangle, draw, fill=red!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{empty} = [rectangle, text width=5em, text centered, rounded corners, minimum height=4em]
+    
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\begin{figure}
+\begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1,2) rectangle (10,-2);
+    
+    % Place nodes
+    \node<1->[block] (home) {home};
+    \node<1->[block, right of=home] (andreas) {andreas};
+    \node<1->[block, above of=andreas] (suska) {suska};
+    
+    \node<2->[block, right of=andreas] (desktop) {desktop};
+    \node<2->[block, above of=desktop] (downloads) {download};
+    \node<2->[block, below of=desktop] (work) {work};
+    
+    \node<3->[empty, right of=work] (sampleA) {sampleB.txt};
+    \node<3->[empty, right of=downloads] (sampleB) {sampleA.txt};
+    
+%   \node<2->[block, right of=test, node distance=3cm] (filter) {Call raw\\variants};   
+    
+    % Draw edges
+    \path<1->[line] (home) -- (andreas);
+    \path<1->[line] (home) -- (suska);
+    
+    \path<2->[line] (andreas) -- (desktop);
+    \path<2->[line] (andreas) -- (downloads);
+    \path<2->[line] (andreas) -- (work);
+    
+    \path<3->[line] (work) -- (sampleA);
+    \path<3->[line] (downloads) -- (sampleB);
+
+\end{tikzpicture}
+\end{figure}
+/home/andreas/downloads/sampleA.txt
+/home/andreas/desktop/
+/home/andreas/work/sampleB.txt
+
+\end{frame}
+
+% 
+% % ------------------------------------------------
+% \section{Indel calling parameters}
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Overview}
+% 
+% \begin{block}{VICTOR pilot study}
+% \begin{itemize}
+% \item Default parameters: 40\% Indels missed 
+% \item Relaxed parameters: 0\% Indels missed
+% \item Unknown false-positives 
+% \end{itemize}
+% \end{block}
+% 
+% \pause
+% 
+% \begin{block}{Aims}
+% \begin{itemize}
+% \item Effect of relaxed parameters on 148 gene panel?
+% \item Optimal parameters despite lack of control?
+% \end{itemize}
+% \end{block}
+% 
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Expected parameter effects}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/deamination/Hypothetical_effects_on_quality_score}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Effect of parameter classes}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/roc/Effect_on_Indel_calls}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Effect on ratio of variants near homopolymers}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/roc/sample}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Effect on ratio of variants in public DBs}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/roc/Effects_on_ratio_of_known_variants}
+% \end{figure}
+% \end{frame}
+% 
+% % ------------------------------------------------
+% \section{General QC}
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{DNA deamination in FFPE samples}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/deamination/deamination_ctga_ratio_total_snps_v2"}
+% \end{figure}
+% \end{frame}
+% 
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Coverage across amplicon X sample}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/Documents/cov_hist_all_amplicons"}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Coverage across amplicon types}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/quasar_coverage_analysis/Distribution_of_amplicon_type_coverage_mean}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Coverage across samples}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/Documents/cov_hist_samples"}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Global coverage vs deamination}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/Documents/cov_corr_to_deamination"}
+% \end{figure}
+% \end{frame}
+% 
+% % ------------------------------------------------
+% \section{Variant calling}
+% % ------------------------------------------------
+% 
+% 
+% 
+% \begin{frame}
+% \frametitle{Filtering stages}
+% 
+% \begin{block}{Basic filter}
+% \begin{itemize}
+% \item no deaminated samples
+% \item no CNVs
+% \item no variants with low coverage in Normal
+% \end{itemize}
+% \end{block}
+% 
+% \begin{block}{Quality filter}
+% \begin{itemize}
+% \item tumour coverage above 400X
+% \item variant frequency above 0.05 
+% \end{itemize}
+% \end{block}
+% 
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Cumulative histogram of filtering parameters}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_QC2_parameters_cumulative_histo_coverage_varfreq"}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Variant numbers failing/passing QC2}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_noQC_vs_QC2_parameters_count_fail_vs_pass_QC2_new_vs_rsid_by_impact"}
+% \end{figure}
+% \tiny 6157 variants fail QC2, 2545 pass
+% \end{frame}
+% 
+% 
+% % ------------------------------------------------
+% \section{Functional analysis}
+% % ------------------------------------------------
+% 
+% 
+% \begin{frame}
+% 
+% \frametitle{Functional analysis}
+% 
+% \begin{block}{\textit{In silico} questions}
+% \begin{itemize}
+% \item Which genes are significantly mutated?
+% \item Are there genes that never/always mutate together?
+% \item Which pathways are affected?
+% \end{itemize}
+% \end{block}
+% 
+% \pause
+% \vfill
+% 
+% \begin{block}{Aim}
+% \centering Provide oncologists with starting point for clinical analysis.
+% \end{block}
+% 
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{How to find significant genes?}
+% 
+% \begin{block}{Basic approach}
+% No. of variants corrected by...
+% \begin{itemize}
+% \item gene length
+% \end{itemize}
+% \end{block}
+% 
+% \pause
+% 
+% \begin{block}{MuSiC algorithm}
+% No. of variants corrected by...
+% \begin{itemize}
+% \item gene length
+% \item mut. frequency per sample
+% \item mut. frequency per mutation type
+% \end{itemize}
+% \end{block}
+% 
+% \end{frame}
+% 
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{How to find significant genes?}
+%   \vfill
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{/home/andreas/Documents/mutsigcv_paper}
+% \end{figure}
+%   \vfill
+% \small Mutational heterogeneity in cancer and the search for new cancer-associated genes.\\
+% \tiny Nature 499, 214–218 (11 July 2013)
+% \end{frame}
+% 
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \fontsize{8pt}{7.2}\selectfont
+% 
+% \frametitle{How to find significant genes?}
+% 
+% \begin{block}{Basic approach}
+% No. of variants corrected by...
+% \begin{itemize}
+% \item gene length
+% \end{itemize}
+% \end{block}
+% 
+% \begin{block}{MuSiC algorithm}
+% No. of variants corrected by...
+% \begin{itemize}
+% \item gene length
+% \item mut. frequency per sample
+% \item mut. frequency per mutation type
+% \end{itemize}
+% \end{block}
+% 
+% \begin{block}{MutSigCV algorithm}
+% No. of variants corrected by...
+% \begin{itemize}
+% \item (all above)
+% \item transcription rate per gene
+% \item chromatin state per gene
+% \item replication time per gene
+% \end{itemize}
+% \end{block}
+% 
+% \end{frame}
+% 
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Quasar2 vs TSCGA vs COSMIC DB}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_QC2_venn_mutsig_tcga_COSMIC"}
+% \end{figure}
+% \end{frame}
+% 
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Variant numbers inside/outside of significant genes}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_noQC_vs_QC2_parameters_count_sign_vs_nonsign_new_vs_rsid_by_impact"}
+% \end{figure}
+% \tiny 1339 variants outside of sign. genes, 1206 inside
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Variants in the significant genes}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_noQC_vs_QC2_parameters_count_per_sign_gene"}
+% \end{figure}
+% \end{frame}
+% 
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Network of mutually exclusive genes}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_QC2_music_relation_OR"}
+% \end{figure}
+% \end{frame}
+% 
+% % ------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Network of mutually connected genes}
+% \begin{figure}
+% \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_QC2_music_relation_AND"}
+% \end{figure}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% 
+% 
+% \begin{frame}
+% \frametitle{Top 10 affected KEGG pathways}
+% 
+%   \centering
+%   \vfill
+% 
+% \begin{table}
+% \begin{tabular}{lrr}
+% \toprule
+%                                              Name &  p-value &    FDR \\
+% \midrule
+%  Regulation of actin cytoskeleton  &        0 &      0 \\
+%                Pathways in cancer  &        0 &      0 \\
+%                Endometrial cancer  &        0 &      0 \\
+%                               HTLV &   4e-306 &      0 \\
+%                   Prostate cancer  &   1e-302 & 1e-301 \\
+%            ErbB signaling pathway  &   1e-283 & 1e-283 \\
+%                            Glioma  &   3e-283 & 2e-282 \\
+%          Chronic myeloid leukemia  &   7e-274 & 1e-272 \\
+%                          Melanoma  &   3e-262 & 3e-261 \\
+%            Acute myeloid leukemia  &   1e-260 & 2e-259 \\
+%                 Colorectal cancer  &   4e-256 & 3e-255 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Top 10 affected Reactome pathways}
+%   \centering
+%   \vfill
+% 
+% \begin{table}
+% \begin{tabular}{lrr}
+% \toprule
+%                                              Name &  p-value &    FDR \\
+% \midrule
+%                    Downstream Signal Transduction &   2e-239 & 1e-238 \\
+%                                 Signaling By PDGF &   2e-239 & 1e-238 \\
+%                             Developmental Biology &   1e-225 & 1e-225 \\
+%                                Signaling By ERBB4 &   3e-223 & 1e-222 \\
+%                                Signaling By ERBB2 &   2e-222 & 1e-221 \\
+%                                     Immune System &   2e-220 & 3e-220 \\
+%                                 Signaling By FGFR &   6e-220 & 3e-219 \\
+%                      Signaling By FGFR In Disease &   6e-220 & 3e-219 \\
+%                                 Signalling By NGF &   2e-212 & 2e-211 \\
+%  NGF Sign. Via TRKA &   4e-210 & 9e-210 \\
+%                                     Axon Guidance &   2e-204 & 3e-204 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+% \end{frame}
+% 
+% %------------------------------------------------
+% 
+% \begin{frame}
+% \frametitle{Summary}
+% 
+% \begin{columns}[t]
+% \column{.5\textwidth}
+% \centering
+% \includegraphics[width=5cm,height=4cm]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/roc/Effect_on_Indel_calls}\\
+% \includegraphics[width=5cm,height=5cm]{/home/andreas/bioinfo/projects/lifetech_laptop/wt_validation/quasar/deamination/deamination_ctga_ratio_total_snps_v2}
+% \column{.5\textwidth}
+% \centering
+% \includegraphics[width=5cm,height=4cm]{/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_noQC_vs_QC2_parameters_count_sign_vs_nonsign_new_vs_rsid_by_impact}\\
+% \includegraphics[width=6cm,height=4cm]{"/home/andreas/bioinfo/projects/wtc_quasar_analysis/analysis/quasar40_QC2_venn_mutsig_tcga_COSMIC"}
+% \end{columns}
+% \end{frame}
+% 
+%  
+% % %------------------------------------------------
+% % 
+% % \begin{frame}
+% % \Huge{\centerline{The End}}
+% % \end{frame}
+% % 
+% % %----------------------------------------------------------------------------------------
+
+\end{document} 

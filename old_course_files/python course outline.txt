@@ -1,0 +1,96 @@
+﻿14:00
+bash
+bash intro
+cd/pwd
+mkdir/touch
+cp/mv/rm
+move around and create a folder
+untar the example files
+
+
+less
+
+
+cat
+cut
+grep
+wc
+sort/ uniq
+diff?
+do some stats on a real file
+
+
+
+
+16:00
+intro
+invention, use, pros and cons
+high-level language (TA vs Hiwi example)
+compiled vs scripting language
+code as simple textfile in scripting languages
+
+
+python basics
+
+
+python shell
+variable type (int, float, string, bool)
+string (as immutable bytestring)
+string indexing
+comparisons/ conditionals
+play with python shell
+
+
+saving scripts
+comments
+write hello world
+
+
+
+
+
+
+list (as mutable array of pointers)
+array indexing
+concept of copy vs reference (list vs string)
+for/ if
+change helloworld using list and for-loop
+
+
+dict (as mutable hash:pointer pairs)
+change helloworld using dict
+
+
+
+
+
+
+python advanced
+
+
+read/ write file
+read + print  real file
+
+
+concept of objects, methods (-> subject verb object)
+parse argument with sys.argv
+string methods
+manipulate strings for output
+case: change_nexus.py script 
+
+
+list methods
+dict methods
+do some stats on the data
+case: robbies gene list
+
+
+functions
+import modules
+modules:
+* sys
+* os 
+* random
+* biopython
+* re?
+python help (stackoverflow, docs)
