@@ -1,4 +1,4 @@
-PWD /home/andreas/Documents/course/tasks
+PWD /home/andreas/Documents/course/assignment_2
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
@@ -11,8 +11,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-INPUT lastpage.sty
-INPUT lastpage.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/extramarks.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/extramarks.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
@@ -41,8 +41,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
-INPUT lipsum.sty
-INPUT lipsum.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 INPUT /usr/share/texmf/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texmf/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -63,4 +63,3 @@ OUTPUT python_course_pandas_tasks.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT python_course_pandas_tasks.aux

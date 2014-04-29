@@ -291,58 +291,14 @@ df{[}"new"{]} = df.old.str.upper()  & New col from string method
 % ------------------------------------------------
 
 \begin{frame}
-\frametitle{Histograms}
-\begin{block}{}
-\lstinputlisting[language=Python]{histogram1.py}
-\end{block}
-\end{frame}
+\frametitle{Histogram}
 
-\begin{frame}
-\frametitle{Histograms}
-\begin{figure}
-\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{histogram0}
-\end{figure}
+
+
+
 \end{frame}
 
 % ------------------------------------------------
-
-\begin{frame}
-\frametitle{Histograms}
-\begin{block}{}
-\lstinputlisting[language=Python]{histogram2.py}
-\end{block}
-\end{frame}
-
-\begin{frame}
-\frametitle{Histograms}
-\begin{figure}
-\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{histogram1}
-\end{figure}
-\end{frame}
-
-% ------------------------------------------------
-
-\begin{frame}
-\frametitle{Scatterplots}
-
-\centering\large plt.scatter(df.FDP, df.FAO)
-
-\begin{figure}
-\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{scatter_mpl}
-\end{figure}
-\end{frame}
-
-% ------------------------------------------------
-
-\begin{frame}
-\frametitle{Scatterplots}
-
-\centering\large sns.jointplot("FDP", "FAO", df)
-
-\begin{figure}
-\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{scatter_sns}
-\end{figure}
-\end{frame}
 
 % ------------------------------------------------
 

@@ -162,7 +162,7 @@
 
 \newcommand{\hmwkTitle}{} % Assignment title
 \newcommand{\hmwkDueDate}{May 2014} % Due date
-\newcommand{\hmwkClass}{Python Course tasks: Pandas} % Course/class
+\newcommand{\hmwkClass}{Python Course tasks: Python} % Course/class
 \newcommand{\hmwkClassTime}{} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
 \newcommand{\hmwkAuthorName}{Andreas Weller} % Your name
@@ -218,24 +218,22 @@
 \end{enumerate}
 \end{homeworkProblem}
 
-\begin{homeworkProblem}[Dummy DataFrames]
-Create a dummy dataframe:\\ 
-\hilight{data = dict(cov = [632, 1638, 569, 115, 433, 1130, 754, 555, 345],} \\
-\hilight{\hspace{2cm} sample = ["A", "A", "A", "B","B","B", "C","C","C"],}\\
-\hilight{\hspace{2cm} chrom = [1,2,3,1,2,3,1,2,3])}\\
-\hilight{df = pd.DataFrame(data) }       
+\begin{homeworkProblem}[ DataFrames]
+Create a dummy dataframe:\\
+\hilight{ df = pd.DataFrame({'cov':[632, 1638, 569, 115, 433, 1130, 754, 555, 345],\\
+                     'sample':["A", "A", "A", "B","B","B", "C","C","C"],\\
+                     'chrom':[1,2,3,1,2,3,1,2,3]}) }       \\
 
-% \pythonscript[/home/andreas/Documents/course/tasks/function_example2]
-
+\pythonscript[function_example2]
 \begin{enumerate}
 \item Use \hilight{head}, \hilight{tail} and \hilight{describe}
-\item Use the \hilight{loc} method to... 
+\item Use the loc method to... 
   \begin{enumerate}
   \item select rows 1-3.
   \item select all rows of the sample column.
   \item select rows 1-3 of chrom and cov.
   \end{enumerate}
-\item Use the \hilight{iloc} method to select the first 5 rows and columns      
+\item Use the iloc method to select the first 5 rows and columns      
 \end{enumerate}
 \end{homeworkProblem}
 
@@ -267,15 +265,6 @@ Create a dummy dataframe:\\
 \end{enumerate}
 \end{homeworkProblem}
 
-\begin{homeworkProblem}[Column creation]
-\begin{enumerate}
-\item Replace the "Effect\_Impact" column with a lowercase version of itself. Hint: the \hilight{.str} method exposes a column as a string so you can use all the standard Python string functions.
-\item Create a new column called DP as the sum of FAO and FDP.
-\item Create a new column called len as the combined length of ref and alt.
-\item Write a function that parses the Effect from a row and returns "strong" if it's in 'STOP\_GAINED' or 'FRAME\_SHIFT', otherwise "weak". Test the function using a dictionary (to simulate a row).
-\item Create a new column "Binary\_Impact" by applying the function using \hilight{df.apply(function, axis=1)}.
-\end{enumerate}
-\end{homeworkProblem}
 
 
 

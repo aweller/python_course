@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.4.5)  29 APR 2014 14:58
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.4.5)  29 APR 2014 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -33,10 +33,11 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \f@ncyO@erf=\skip49
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
-) (./lastpage.sty
-Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
- (JPG)
-) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/extramarks.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/extramarks.sty
 \@temptokenb=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
@@ -102,7 +103,8 @@ Package: listings 2013/07/10 1.5 (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-) (./lipsum.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count96
 )
@@ -166,22 +168,45 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
 LaTeX Font Info:    ... okay on input line 187.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
 LaTeX Font Info:    ... okay on input line 187.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 187.
 \c@lstlisting=\count99
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 254.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 254.
- [1
 
-] AED: lastpage setting LastPage [2]
-(./python_course_pandas_tasks.aux) ) 
+Overfull \hbox (207.60777pt too wide) in paragraph at lines 222--226
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--226
+
+ []
+
+
+! Package Listings Error: File `[(.py)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: py)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.227 \pythonscript[f
+                     unction_example2]^^M
+End of file on the terminal!
+
+ 
 Here is how much of TeX's memory you used:
- 3052 strings out of 495674
- 41727 string characters out of 6188156
- 225530 words of memory out of 5000000
- 6237 multiletter control sequences out of 15000+600000
+ 3074 strings out of 495674
+ 42271 string characters out of 6188156
+ 223251 words of memory out of 5000000
+ 6258 multiletter control sequences out of 15000+600000
  4245 words of font info for 16 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,11n,43p,313b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on python_course_pandas_tasks.pdf (2 pages).
+ 41i,1n,43p,313b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
